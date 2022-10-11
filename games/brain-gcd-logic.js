@@ -17,11 +17,13 @@ export function brainGcd() {
         const number2 = getRandomInt(10);
         const answer = askQuestion(`${number1} ${number2}`);
         const correctAnswer = NOD(number1, number2);
-        congratsMessage(name, i);
-        if (compareAnswers(answer,correctAnswer, name) === 'Correct!') {
-            continue;
+        
+        let result = compareAnswers(answer,correctAnswer, name);
+        if ( result === 'Correct!') {
+            console.log(result);
         } else {
             break;
         }
+        congratsMessage(name, i);
     }
 }

@@ -22,12 +22,13 @@ export function brainCalc() {
                 correctAnswer = number1 * number2;
                 break;
         }
-        congratsMessage(name, i);
-        if (compareAnswers(answer,correctAnswer, name) === 'Correct!') {
-            continue;
+        let result = compareAnswers(answer,correctAnswer, name);
+        if ( result === 'Correct!') {
+            console.log(result);
         } else {
             break;
         }
+        congratsMessage(name, i);
     }
 }
 

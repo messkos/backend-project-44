@@ -7,11 +7,12 @@ export function brainEven() {
         const randomNumber = getRandomInt(100);
         const answer = askQuestion(randomNumber);
         const correctAnswer = getCorrectAnswerEven(randomNumber);
-        congratsMessage(name, i);
-        if (compareAnswers(answer,correctAnswer, name) === 'Correct!') {
-            continue;
+        let result = compareAnswers(answer,correctAnswer, name);
+        if ( result === 'Correct!') {
+            console.log(result);
         } else {
             break;
         }
+        congratsMessage(name, i);
     }
 }
