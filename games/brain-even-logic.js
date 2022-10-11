@@ -1,4 +1,4 @@
-import {greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion} from '../src/index.js'
+import {greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion, congratsMessage, compareAnswers} from '../src/index.js'
 
 export function brainEven() {
     const name = greetingUser();
@@ -7,11 +7,11 @@ export function brainEven() {
         const randomNumber = getRandomInt(100);
         const answer = askQuestion(randomNumber);
         const correctAnswer = getCorrectAnswerEven(randomNumber);
-        if (answer === correctAnswer) {
-            console.log('Correct!');
+        congratsMessage(name, i);
+        if (compareAnswers(answer,correctAnswer, name) === 'Correct!') {
+            continue;
         } else {
-            return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+            break;
         }
     }
-    console.log(`Congratulations, ${name}!`);
 }
