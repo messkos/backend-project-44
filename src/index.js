@@ -6,8 +6,8 @@ const greetingUser = () => {
     console.log(`Hello, ${name}!`);
     return name
 }
-const getRandomInt = () => {
-    const randomInt = Math.floor(Math.random() * 101);
+const getRandomInt = (max) => {
+    const randomInt = Math.floor(Math.random() * (max + 1));
     return randomInt;
 }
 
