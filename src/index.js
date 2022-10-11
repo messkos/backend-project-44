@@ -22,4 +22,15 @@ const askQuestion = (terms) => {
     return readlineSync.question(`Question: ${terms}\nYour answer:`);
 }
 
-export {greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion}
+const compareAnswers = (answer, correctAnswer, name) => {
+    if (answer === String(correctAnswer)) {
+        return 'Correct!';
+    } else {
+        return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+    }
+}
+
+const congratsMessage = (name, i) => {
+    if (i === 2) { return console.log(`Congratulations, ${name}!`); };
+}
+export {greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion, compareAnswers, congratsMessage}
