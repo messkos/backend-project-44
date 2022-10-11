@@ -1,28 +1,15 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import {greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion} from '../src/index.js'
 
-const getRandomInt = () => {
-    const randomInt = Math.floor(Math.random() * 101);
-    return randomInt;
-}
-
-const getCorrectAnswer = (num) => {
-    if (num % 2 === 0) {
-        return 'yes';
-    } else {
-        return 'no';
-    }
-}
 const brainEven = () => {
-    console.log('Welcome to the Brain Games!');
-    const name = readlineSync.question('May I have your name?: ');
-    console.log(`Hello, ${name}!`);
+    const name = greetingUser();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
     for (let i = 0; i < 3; i += 1) {
         const randomNumber = getRandomInt();
-        const answer = readlineSync.question(`Question: ${randomNumber}\nYour answer:`);
-        const correctAnswer = getCorrectAnswer(randomNumber);
+        const answer = askQuestion(randomNumber);
+        const correctAnswer = getCorrectAnswerEven(randomNumber);
         if (answer === correctAnswer) {
             console.log('Correct!');
         } else {
