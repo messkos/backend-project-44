@@ -1,4 +1,6 @@
-import { greetingUser, getRandomInt, askQuestion, congratsMessage, compareAnswers } from '../src/index.js';
+import {
+    greetingUser, getRandomInt, askQuestion, congratsMessage, compareAnswers,
+} from '../src/index.js';
 
 const NOD = (x, y) => {
     if (y > x) {
@@ -8,7 +10,7 @@ const NOD = (x, y) => {
         return x;
     }
     return NOD(y, x % y);
-}
+};
 export function brainGcd() {
     const name = greetingUser();
     console.log('Find the greatest common divisor of given numbers.');
@@ -17,9 +19,9 @@ export function brainGcd() {
         const number2 = getRandomInt(10);
         const answer = askQuestion(`${number1} ${number2}`);
         const correctAnswer = NOD(number1, number2);
-        
-        let result = compareAnswers(answer,correctAnswer, name);
-        if ( result === 'Correct!') {
+
+        const result = compareAnswers(answer, correctAnswer, name);
+        if (result === 'Correct!') {
             console.log(result);
         } else {
             break;

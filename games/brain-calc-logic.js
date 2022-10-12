@@ -1,4 +1,6 @@
-import { greetingUser, getRandomInt, askQuestion, compareAnswers, congratsMessage } from '../src/index.js';
+import {
+    greetingUser, getRandomInt, askQuestion, compareAnswers, congratsMessage,
+} from '../src/index.js';
 
 export function brainCalc() {
     const name = greetingUser();
@@ -12,18 +14,20 @@ export function brainCalc() {
         const answer = askQuestion(expression);
         let correctAnswer = 0;
         switch (sign) {
-            case '+':
-                correctAnswer = number1 + number2;
-                break;
-            case '-':
-                correctAnswer = number1 - number2;
-                break;
-            case '*':
-                correctAnswer = number1 * number2;
-                break;
+        case '+':
+            correctAnswer = number1 + number2;
+            break;
+        case '-':
+            correctAnswer = number1 - number2;
+            break;
+        case '*':
+            correctAnswer = number1 * number2;
+            break;
+        default:
+            // do nothing
         }
-        let result = compareAnswers(answer,correctAnswer, name);
-        if ( result === 'Correct!') {
+        const result = compareAnswers(answer, correctAnswer, name);
+        if (result === 'Correct!') {
             console.log(result);
         } else {
             break;
@@ -31,4 +35,3 @@ export function brainCalc() {
         congratsMessage(name, i);
     }
 }
-
