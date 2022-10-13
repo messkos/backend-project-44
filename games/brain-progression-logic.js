@@ -1,8 +1,8 @@
 import {
     greetingUser, getRandomInt, askQuestion, congratsMessage, compareAnswers,
+    getRandomIntInclusive,
 } from '../src/index.js';
 
-const getRandomIntInclusive = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 const generatArrOfNumbers = () => {
     const coll = [getRandomInt(20)];
     const increaser = getRandomIntInclusive(1, 5);

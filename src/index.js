@@ -11,6 +11,8 @@ const getRandomInt = (max) => {
     return randomInt;
 };
 
+const getRandomIntInclusive = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 const getCorrectAnswerEven = (num) => {
     if (num % 2 === 0) {
         return 'yes';
@@ -33,5 +35,6 @@ const congratsMessage = (name, i) => {
     if (i === 2) { return console.log(`Congratulations, ${name}!`); }
 };
 export {
-    greetingUser, getRandomInt, getCorrectAnswerEven, askQuestion, compareAnswers, congratsMessage,
+    greetingUser, getRandomInt, getRandomIntInclusive, getCorrectAnswerEven,
+    askQuestion, compareAnswers, congratsMessage,
 };
