@@ -2,7 +2,7 @@ import {
   greetingUser, getRandomInt, askQuestion, compareAnswers, congratsMessage,
 } from '../src/index.js';
 
-export function brainCalc() {
+export default function brainCalc() {
   const name = greetingUser();
   const signs = ['+', '-', '*'];
   console.log('What is the result of the expression?');

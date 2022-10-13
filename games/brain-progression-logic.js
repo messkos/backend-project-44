@@ -33,4 +33,4 @@ const brainProgression = () => {
     congratsMessage(name, i);
   }
 };
-export { brainProgression };
+export default brainProgression;

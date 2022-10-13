@@ -28,4 +28,4 @@ const brainPrime = () => {
     congratsMessage(name, i);
   }
 };
-export { brainPrime };
+export default brainPrime;

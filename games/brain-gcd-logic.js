@@ -11,7 +11,7 @@ const NOD = (x, y) => {
   }
   return NOD(y, x % y);
 };
-export function brainGcd() {
+export default function brainGcd() {
   const name = greetingUser();
   console.log('Find the greatest common divisor of given numbers.');
   for (let i = 0; i < 3; i += 1) {
