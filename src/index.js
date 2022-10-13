@@ -16,18 +16,16 @@ const getRandomIntInclusive = (min, max) => Math.floor(Math.random() * (max - mi
 const getCorrectAnswerEven = (num) => {
   if (num % 2 === 0) {
     return 'yes';
-  } else {
-    return 'no';
   }
+  return 'no';
 };
 const askQuestion = (terms) => readlineSync.question(`Question: ${terms}\nYour answer:`);
 
 const compareAnswers = (answer, correctAnswer, name) => {
   if (answer === String(correctAnswer)) {
     return 'Correct!';
-  } else {
-    return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
   }
+  return console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
 };
 
 // eslint-disable-next-line consistent-return
